@@ -85,3 +85,35 @@ for (let i = 0; i < 5; i++) {
 - [] Maak een webpagina die de tafel van 13 weergeeft. 
 - [] Stop in dezelfde pagina een geheim bericht, wat je alleen kunt zien als iemand de console inspect opent.
 
+## Les 3: Formulieren
+
+We hebben nu kennis gemaakt met wat JavaScript kan. Zoals in het begin van de opdrachten vertelde ik al dat je met JavaScript ook input van de gebruiker kunt verwerken. Je maakt hiervoor eerst een webformulier. Dit mag heel basic zijn. De invoer van het webformulier print je in de console of direct op de webpagina.
+
+![Formulier 1](images/Form1.png)
+
+Hiervoor maakt je een functie aan. Deze functie wordt aangeroepen als je bijvoorbeeld ergens op klikt. Een plaatje of een knop. 
+
+```
+<script>
+      function zegHallo(){
+            //Hier komt JavaScript-code                                               
+      }
+</script>
+</head>
+<body>
+  <button type="button" onclick="zegHallo()">Klik</button>
+</body>
+```
+
+### Opdracht 2
+
+- [] Google hoe je een html webformulier maakt. Maak een formulier met 1 invoerveld en een knop waarmee je de input kunt verwerken. Vraag bijvoorbeeld om de naam, en geef deze na het indrukken van de knop terug als: Hallo 'naam'
+- [] Nu je een formulier hebt kun je je vorige opdracht van de tafels uitbreiden. De gebruiker geeft zelf een waarde in die vermenigvuldigd wordt.
+
+## Les 4: If Else
+
+
+
+### Opdracht 3
+
+- [] Maak een webpagina waar je steen, papier schaar tegen de computer speelt.
