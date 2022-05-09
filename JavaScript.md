@@ -116,4 +116,11 @@ Hiervoor maakt je een functie aan. Deze functie wordt aangeroepen als je bijvoor
 
 ### Opdracht 3
 
-- [] Maak een webpagina waar je steen, papier schaar tegen de computer speelt.
+- [] Maak een webpagina waar je steen, papier schaar tegen de computer speelt. Bij deze opdracht kan je de onderstaande functie gebruiken om de computer steen, papier of schaar te laten kiezen.
+
+```javascript
+function kiesOptie() {
+    let opties =  ['steen', 'papier', 'schaar']; 
+    return opties[Math.floor(Math.random() * opties.length)];
+}
+```
