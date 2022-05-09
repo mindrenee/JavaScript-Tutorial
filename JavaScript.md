@@ -112,7 +112,18 @@ Hiervoor maakt je een functie aan. Deze functie wordt aangeroepen als je bijvoor
 
 ## Les 4: If Else
 
+In het de vorige opdracht heb je met een functie gewerkt, we gaan nu een stukje logica aan de code toevoegen met een If, If-Else en Else statement. Hiermee kan je de computer een keuze laten maken tussen verschillende opties. Hieronder volgt een klein voorbeeld:
 
+```javascript
+var variabel = 'piet';
+if (variabel == 'jan') {                  //Als dit waar is, voert ie de code tussen de haakjes {} uit.
+    console.log('Variable is jan!');
+} else if (variabel == 'piet') {          //Als de vorige if-statement niet waar was, en deze wel waar is, voert ie de code tussen de haakjes {} uit.
+    console.log('Variable is piet!');
+} else {                                  //De bovenstaande if-statements zijn niet waar, deze vangt hem op.
+    console.log('Variable is niet jan en ook niet piet.');
+}
+```
 
 ### Opdracht 3
 
