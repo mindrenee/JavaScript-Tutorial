@@ -94,11 +94,12 @@ We hebben nu kennis gemaakt met wat JavaScript kan. Zoals in het begin van de op
 Hiervoor maakt je een functie aan. Deze functie wordt aangeroepen als je bijvoorbeeld ergens op klikt. Een plaatje of een knop. 
 
 ```html
-<script>
-      function zegHallo(){
-            //Hier komt JavaScript-code                                               
-      }
-</script>
+<head>
+  <script>
+        function zegHallo(){
+              //Hier komt JavaScript-code                                               
+        }
+  </script>
 </head>
 <body>
   <button type="button" onclick="zegHallo()">Klik</button>
@@ -134,7 +135,7 @@ var getal1 = 20;
 var getal2 = 40;
 
 if (getal1 == 20 && getal2 == 40) {
-    console.log('Getal 1 is 20 en getal 2 is 40);
+    console.log('Getal 1 is 20 en getal 2 is 40');
 } else if (getal1 == 20 || getal2 = 40) {
     console.log('Getal 1 of getal 2 is 20');
 } else if (getal1 == 40 || getal2 = 40) {
