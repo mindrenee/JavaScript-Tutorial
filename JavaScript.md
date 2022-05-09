@@ -125,6 +125,25 @@ if (variabel == 'jan') {                  //Als dit waar is, voert ie de code tu
 }
 ```
 
+## Les 5: En Of
+
+Het kan zo zijn dat je voor 1 output wilt checken of meerdere dingen waar zijn, dat kan met de && en de || operatoren.
+
+```javascript
+var getal1 = 20;
+var getal2 = 40;
+
+if (getal1 == 20 && getal2 == 40) {
+    console.log('Getal 1 is 20 en getal 2 is 40);
+} else if (getal1 == 20 || getal2 = 40) {
+    console.log('Getal 1 of getal 2 is 20');
+} else if (getal1 == 40 || getal2 = 40) {
+    console.log('Getal 1 of getal 2 is 40');
+} else {
+    cosnole.log('De getallen zijn niet 20 en niet 40');
+}
+```
+
 ### Opdracht 3
 
 - [] Maak een webpagina waar je steen, papier schaar tegen de computer speelt. Bij deze opdracht kan je de onderstaande functie gebruiken om de computer steen, papier of schaar te laten kiezen.
