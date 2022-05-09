@@ -94,11 +94,12 @@ We hebben nu kennis gemaakt met wat JavaScript kan. Zoals in het begin van de op
 Hiervoor maakt je een functie aan. Deze functie wordt aangeroepen als je bijvoorbeeld ergens op klikt. Een plaatje of een knop. 
 
 ```html
-<script>
-      function zegHallo(){
-            //Hier komt JavaScript-code                                               
-      }
-</script>
+<head>
+  <script>
+        function zegHallo(){
+              //Hier komt JavaScript-code                                               
+        }
+  </script>
 </head>
 <body>
   <button type="button" onclick="zegHallo()">Klik</button>
@@ -112,7 +113,37 @@ Hiervoor maakt je een functie aan. Deze functie wordt aangeroepen als je bijvoor
 
 ## Les 4: If Else
 
+In het de vorige opdracht heb je met een functie gewerkt, we gaan nu een stukje logica aan de code toevoegen met een If, If-Else en Else statement. Hiermee kan je de computer een keuze laten maken tussen verschillende opties. Hieronder volgt een klein voorbeeld:
 
+```javascript
+var variabel = 'piet';
+if (variabel == 'jan') {                  //Als dit waar is, voert ie de code tussen de haakjes {} uit.
+    console.log('Variable is jan!');
+} else if (variabel == 'piet') {          //Als de vorige if-statement niet waar was, en deze wel waar is, voert ie de code tussen de haakjes {} uit.
+    console.log('Variable is piet!');
+} else {                                  //De bovenstaande if-statements zijn niet waar, deze vangt hem op.
+    console.log('Variable is niet jan en ook niet piet.');
+}
+```
+
+## Les 5: En Of
+
+Het kan zo zijn dat je voor 1 output wilt checken of meerdere dingen waar zijn, dat kan met de && en de || operatoren.
+
+```javascript
+var getal1 = 20;
+var getal2 = 40;
+
+if (getal1 == 20 && getal2 == 40) {
+    console.log('Getal 1 is 20 en getal 2 is 40');
+} else if (getal1 == 20 || getal2 = 40) {
+    console.log('Getal 1 of getal 2 is 20');
+} else if (getal1 == 40 || getal2 = 40) {
+    console.log('Getal 1 of getal 2 is 40');
+} else {
+    cosnole.log('De getallen zijn niet 20 en niet 40');
+}
+```
 
 ### Opdracht 3
 
