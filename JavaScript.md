@@ -113,7 +113,7 @@ Hiervoor maakt je een functie aan. Deze functie wordt aangeroepen als je bijvoor
 
 ## Les 4: If Else
 
-In het de vorige opdracht heb je met een functie gewerkt, we gaan nu een stukje logica aan de code toevoegen met een If, If-Else en Else statement. Hiermee kan je de computer een keuze laten maken tussen verschillende opties. Hieronder volgt een klein voorbeeld:
+Je hebt nu een aardige basis instructies gebruikt in JavaScript. De webpagina kan nu ook al interactie hebben met de gebruiker van je website. Er is in veel programmeertalen nog een belangrijke basis. Namelijk de if else instructie. Deze instructie kun je letterlijk vertalen als Als (dit klopt, dan), Anders (dan klopt het niet, en dan doe ik dit). Met deze instructie kan je de computer een keuze laten maken tussen verschillende opties. Hieronder volgt een klein voorbeeld:
 
 ```javascript
 var variabel = 'piet';
@@ -126,9 +126,22 @@ if (variabel == 'jan') {                  //Als dit waar is, voert ie de code tu
 }
 ```
 
+Hetzelfde kun je doen om te controleren of een getal even is. Is het resultaat van de som even? Dan is het restproduct 0. Om het restgetal te krijgen gebruik je niet het delen teken / maar een modulo teken %.
+
+```javascript
+const number = 11;
+
+if(number % 2 == 0) {
+    console.log("Het getal is even.");
+}
+else {
+    console.log("Het getal is oneven.");
+}
+```
+
 ## Les 5: En Of
 
-Het kan zo zijn dat je voor 1 output wilt checken of meerdere dingen waar zijn, dat kan met de && en de || operatoren.
+Soms wil je meerdere dingen tegelijk controleren. Bijvoorbeeld of een getal tussen 2 andere getallen. Is iets groter dan 10 maar kleiner dan 50? Of 2 variabelen die moeten voldoen om een bepaald commando uit te voeren. Dan wil je controleren of meerdere dingen waar zijn, dat kan met de && en de || operatoren.
 
 ```javascript
 var getal1 = 20;
@@ -146,6 +159,16 @@ if (getal1 == 20 && getal2 == 40) {
 ```
 
 ### Opdracht 3
+
+De kennis uit de vorige lessen ga je nu zelf toepassen. Je programmeert 3 kleine programmaatjes als voorbereiding op de praktische opdracht.
+
+- [] Dobbelen: Druk op een knop op de pagina om een dobbelsteen te gooien. Misschien kun je de knop mooi maken met CSS? Een willekeurig getal genereren tussen 0 en 6 kan met het onderstaande commando.
+
+```javascript
+Math.floor(Math.random() * 6);
+```
+
+- [] Hoger, lager: Laat de computer een willekeurig getal kiezen dat de gebruiker vervolgens moet raden. De computer geeft steeds hints of het getal hoger of lager is. Wees creatief hoe het spel eruit ziet. Maak je een simpel formulier of tel je zelfs hoeveel pogingen de gebruiker erover deed om te raden?
 
 - [] Maak een webpagina waar je steen, papier schaar tegen de computer speelt. Bij deze opdracht kan je de onderstaande functie gebruiken om de computer steen, papier of schaar te laten kiezen.
 
