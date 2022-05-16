@@ -106,6 +106,18 @@ Hiervoor maakt je een functie aan. Deze functie wordt aangeroepen als je bijvoor
 </body>
 ```
 
+Als je je input veld een id toewijst met bijvoorbeeld `id="inputveld"`, kan je naar je inputveld refereren met JavaScript, vervolgens staat hetgene wat de gebruiker invoert opgeslagen in het attribuut `.value`. Dit kan je als volgt doen:
+
+```html
+<input type="text" id="inputveld">
+<script>
+    let inputveld = document.querySelector('#inputveld');
+    let waarde    = inputveld.waarde;
+</script>
+```
+
+De ingevulde waarde staat nu opgeslagen in het variabel `waarde`.
+
 ### Opdracht 2
 
 - [] Google hoe je een html webformulier maakt. Maak een formulier met 1 invoerveld en een knop waarmee je de input kunt verwerken. Vraag bijvoorbeeld om de naam, en geef deze na het indrukken van de knop terug als: Hallo 'naam'
@@ -149,9 +161,9 @@ var getal2 = 40;
 
 if (getal1 == 20 && getal2 == 40) {
     console.log('Getal 1 is 20 en getal 2 is 40');
-} else if (getal1 == 20 || getal2 = 40) {
+} else if (getal1 == 20 || getal2 == 40) {
     console.log('Getal 1 of getal 2 is 20');
-} else if (getal1 == 40 || getal2 = 40) {
+} else if (getal1 == 40 || getal2 == 40) {
     console.log('Getal 1 of getal 2 is 40');
 } else {
     cosnole.log('De getallen zijn niet 20 en niet 40');
