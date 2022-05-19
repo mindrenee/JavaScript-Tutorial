@@ -112,7 +112,7 @@ Als je je input veld een id toewijst met bijvoorbeeld `id="inputveld"`, kan je n
 <input type="text" id="inputveld">
 <script>
     let inputveld = document.querySelector('#inputveld');
-    let waarde    = inputveld.waarde;
+    let waarde    = inputveld.value;
 </script>
 ```
 
