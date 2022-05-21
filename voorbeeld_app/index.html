@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>
+            Weerbericht
+        </title>
+        <style>
+            body { 
+                background-color: linen;
+            }
+        </style>
+        
+        <script type="text/javascript">
+            fetch('https://data.buienradar.nl/2.0/feed/json')
+            .then(function(response) {
+                return response.json();
+            }).then(function(jsonData) {
+                // Hier gaan we de opgehaalde data verwerken!
+                console.log(jsonData); // <-- Dit is alle data die we hebben opgehaald
+                // Hier halen we de weeromschrijving van weerstation Berkhout op (weerstation 2)
+                document.querySelector(".titel").innerHTML = jsonData.actual.stationmeasurements[2].weatherdescription; 
+                
+                var img = document.createElement("img");
+                img.src = jsonData.actual.stationmeasurements[2].iconurl // <-- Het weer icoon
+                var src = document.querySelector(".weer-icoontje")
+                src.appendChild(img)
+
+                // En de tempatuur
+                document.querySelector(".temperatuur").innerHTML = jsonData.actual.stationmeasurements[2].temperature + "graden";
+                 
+            }).catch(function(err) {
+                console.log("Opps, Something went wrong!", err);
+            })
+        </script>
+    </head>
+    <body>
+        <h1>
+            Wat is het weer?
+        </h1>
+
+        <h3 class="titel"></h3>
+        <p class="weer-icoontje"></p>
+        <p class="temperatuur"></p>
+
+    </body>
+</html>
