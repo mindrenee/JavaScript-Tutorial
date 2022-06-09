@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>
+            Weerbericht
+        </title>
+        <style>
+            body { 
+                background-color: linen;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            Wat is het weer?
+        </h1>
+
+        <select id="weer-locatie">
+            <option disabled selected>Selecteer een locatie</option>    <!-- Standaard optie in het selectiemenu. Doordat de optie disabled bevat kan de gebruiker deze optie niet opnieuw kiezen zodra een andere optie is gekozen. -->
+        </select>
+
+        <h3 class="titel"></h3>
+        <p class="weer-icoontje"></p>
+        <p class="temperatuur"></p>
+
+        
+        <script type="text/javascript">
+            //Hier selecteren we de elementen van tevoren en slaan we ze netjes op in variablen. Dat maakt het hierna makkelijker om naar de refereren.
+            const locationSelection     = document.querySelector('#weer-locatie');
+            const weatherIcon           = document.querySelector('.weer-icoontje');
+            const weatherTitle          = document.querySelector('.titel');
+            const weatherTemperature    = document.querySelector('.temperatuur');
+
+            fetch('https://data.buienradar.nl/2.0/feed/json').then(function(result) {
+                return result.json();
+            }).then(function(jsonData) {
+                //Even de opgehaalde informatie in de console neerzetten zodat we kunnen bekijken wat er allemaal in staat.
+                console.log(jsonData);
+
+                //Voor elk weerstation voegen we een optie toe aan het selectiemenu.
+                for(var i = 0; i < jsonData.actual.stationmeasurements.length; i++) {
+                    let option = document.createElement('option');                              //Met document.createElement kunnen we een HTML element creeeren.
+                    option.innerText = jsonData.actual.stationmeasurements[i].stationname;      //De .innerText property bevat de inhoud van een element. Deze kunnen we aanpassen met als gevolg dat de inhoudt op de pagina ook wordt aangepast.
+                    option.value = i;                                                           //.value is een speciale waarde. Normaal bewerk je properties van een HTML element met .setAttribute en .getAttribute maar de waarde van HTML Form elementen kun je met .value ophalen en veranderen.
+
+                    locationSelection.appendChild(option);                                      //Met .appendChild kunnen we het option element toevoegen aan de locationSelection die we eerder in een variabel hebben opgeslagen.
+                }
+
+                //Met .addEventListener kunnen we de code laten wachten op een bepaalde actie van de gebruiker. Binnen een HTML formulier wordt een aanpassing aan het formulier altijd gezien als het 'input'-event.
+                //We passen dit toe op de locationSelection die we eerder in een variabel hebben opgeslagen, omdat we willen wachten totdat de gebruiker een locatie kiest of veranderd.
+                //De code die we als 'callback' toevoegen kan meerdere keren worden uitgevoerd doordat het in een functie staat. Hierdoor kan een gebruiker na de eerste selectie altijd weer van weerstation veranderen.
+
+                locationSelection.addEventListener('input', function() {
+                    //We slaan de index van het weerstation tijdelijk op in een variabel voor ons gemak. De value van het select element is nu de value geworden die aan een option element is toegewezen in de bovenstaande for-loop.
+                    let stationIndex = locationSelection.value;
+
+                    // Hier halen we de weeromschrijving van weerstation Berkhout op (weerstation 2)
+                    weatherTitle.innerHTML = jsonData.actual.stationmeasurements[stationIndex].weatherdescription; 
+                    
+                    weatherIcon.innerHTML = '';                                             //Telkens als de gebruiker een nieuw weerstation selecteert willen we ervoorzorgen dat het bestaande weericoontje wordt verwijderd. Dit doen we door de innerHTML van het 'parent'-element te legen.
+                    var img = document.createElement("img");                                //Nieuw img-element aanmaken.
+                    img.src = jsonData.actual.stationmeasurements[stationIndex].iconurl;    //src van het nieuwe img-element aanpassen.
+                    weatherIcon.appendChild(img);                                           //het nieuwe plaatje toevoegen aan de pagina.
+
+                    // En de tempatuur
+                    weatherTemperature.innerHTML = jsonData.actual.stationmeasurements[stationIndex].temperature + "graden";
+                    
+                });
+            }).catch(function(err) {
+                console.log("Opps, Something went wrong!", err);
+            })
+        </script>
+    </body>
+</html>
